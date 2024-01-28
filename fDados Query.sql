@@ -1,7 +1,7 @@
     SELECT DISTINCT
         t1.Pedido,
         t1.filial,
-        t1.LAN«AMENTO_NOTA_SAIDA as data,
+        t1.LAN√áAMENTO_NOTA_SAIDA as data,
         t1.SlpCode SlpCode_NF,
         t1.SlpName Representante_NF,
         t1.CardCode as clientecod,
@@ -22,7 +22,7 @@
     FROM SBODISCOVER..[VW_EN_VENDAS_POWER_BI] T1
         LEFT JOIN SBODISCOVER..[VW_EN_DESPESAS_ADICIONAIS] T2 ON T2.NFE = T1.NFE AND T2.FILIAL = T1.FILIAL
  
-    WHERE YEAR(t1.LAN«AMENTO_NOTA_SAIDA) >= YEAR(GETDATE())-5
+    WHERE YEAR(t1.LAN√áAMENTO_NOTA_SAIDA) >= YEAR(GETDATE())-5
  
         AND t1.OperacaoFiscal = 'VENDA'
         AND t1.DOCENTRY_NOTA_SAIDA <> 'Nota cancelada'
@@ -35,7 +35,7 @@ UNION ALL
     SELECT DISTINCT
         t1.Pedido,
         t1.filial,
-        t1.LAN«AMENTO_DEVOLU«√O as data,
+        t1.LAN√áAMENTO_DEVOLU√á√ÉO as data,
         t1.SlpCode SlpCode_NF,
         t1.SlpName Representante_NF,
         t1.CardCode as clientecod,
@@ -57,5 +57,5 @@ UNION ALL
  
     WHERE t1.FATURAMENTO_ANO >= YEAR(GETDATE())-5
         AND t1.OperacaoFiscal = 'devolucao'
-        AND t1.DOCENTRY_DEVOLU«√O <> 'DEVOLU«√O CANCELADA'
+        AND t1.DOCENTRY_DEVOLU√á√ÉO <> 'DEVOLU√á√ÉO CANCELADA'
     --AND t1.NFE = '274230'
