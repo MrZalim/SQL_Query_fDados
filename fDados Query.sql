@@ -1,7 +1,7 @@
     SELECT DISTINCT
         t1.Pedido,
         t1.filial,
-        t1.LANÇAMENTO_NOTA_SAIDA as data,
+        t1.LANCAMENTO_NOTA_SAIDA as data,
         t1.SlpCode SlpCode_NF,
         t1.SlpName Representante_NF,
         t1.CardCode as clientecod,
@@ -35,7 +35,7 @@ UNION ALL
     SELECT DISTINCT
         t1.Pedido,
         t1.filial,
-        t1.LANÇAMENTO_DEVOLUÇÃO as data,
+        t1.LANCAMENTO_DEVOLUÇÃO as data,
         t1.SlpCode SlpCode_NF,
         t1.SlpName Representante_NF,
         t1.CardCode as clientecod,
